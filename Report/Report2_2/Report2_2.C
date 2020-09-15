@@ -2,10 +2,10 @@
 int main(void)
 {
 	int a;
-	
-	printf("몸무게를 입력하시오:");
-	scanf("%d", &a);
-	printf("입력된 값 : %d\n", a);
+	double b;
+	printf("몸무게(kg)와 키(cm)를 입력:");
+	scanf("%d%lf", &a, &b);
+	printf("입력된 값: %d%lf\n", a, b);
 
-		return 0;
+	return 0;
 }
