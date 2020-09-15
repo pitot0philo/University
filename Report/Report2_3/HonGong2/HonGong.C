@@ -8,7 +8,7 @@ int main(void)
 	scanf("%d%d", &a, &b);
 	
 	if (b != 0)//분모가 0이 되지 않게 방지
-		printf("%d / %d=%f", a, b, a / b);
+		printf("%d / %d=%.4f", a, b, a / (float)b);
 		
 		return 0;
 }
