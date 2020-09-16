@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
+#include <math.h>//powf 명령어 사용을 위함
+#include <stdlib.h>//system 명령어 사용을 위함
 
 int main(void)
 {
@@ -8,7 +8,7 @@ int main(void)
 	double height;
 	double c, d, bmi;
 
-	printf("몸무게(kg)와 키(cm)를 입력");
+	printf("몸무게(kg)와 키(cm)를 입력 : ");
 	scanf("%lf%lf", &weight, &height);
 	
 	c = height / 100;
