@@ -6,7 +6,7 @@ int main(void)
 	int tot;
 
 	tot = kor + eng + mat;
-	printf("±¹¾î : %d, ¿µ¾î : %d, ¼öÇĞ : %d\n", kor, eng, mat);
-	printf("ÃÑÁ¡ : %d", tot);
+	printf("êµ­ì–´ : %d, ì˜ì–´ : %d, ìˆ˜í•™ : %d\n", kor, eng, mat);
+	printf("ì´ì  : %d", tot);
 	return 0;
 }
