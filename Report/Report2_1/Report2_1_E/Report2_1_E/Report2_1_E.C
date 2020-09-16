@@ -1,15 +1,15 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 int main(void)
 {
 	int a, b, tot;
 	double avg;
 
-	printf("µÎ °ú¸ñÀÇ Á¡¼ö : ");
+	printf("ë‘ ê³¼ëª©ì˜ ì ìˆ˜ : ");
 	scanf("%d%d", &a, &b);
 	tot = a + b;
 	avg = tot / 2.0;
-	printf("Æò±Õ : %lf\n", avg);
+	printf("í‰ê·  : %lf\n", avg);
 
 	return 0;
 }

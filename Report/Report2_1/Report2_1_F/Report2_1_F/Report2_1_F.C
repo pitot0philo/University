@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
 	time -= min;
 	time = time * 60;
 	sec = (int)time;
-	printf("3.76½Ã°£Àº %d½Ã°£ %dºĞ %dÃÊÀÔ´Ï´Ù.", hour, min, sec);
+	printf("3.76ì‹œê°„ì€ %dì‹œê°„ %dë¶„ %dì´ˆì…ë‹ˆë‹¤.", hour, min, sec);
 
 	return 0;
 }

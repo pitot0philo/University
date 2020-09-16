@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HonGong.C">
+    <ClCompile Include="Report2_1_D1.C">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
