@@ -3,14 +3,33 @@
 
 int main(void)
 {
-	int A, B;
-	int a, b;
+	int a;
+	int b;
+	char sign = 0;
 
-	a = scanf("%d", &A);
-	b = scanf("%d", &B);
+	printf("사칙연산 입력 : ");
+	scanf("%d%c%d", &a, &sign, &b);
 
-	printf("%d\n%d\n", A, B);
-	printf("%d\n%d\n", a, b);
+	if (sign == '+')
+	{
+		printf("%d%c%d=%d", a, sign, b, a + b);
+	}
+	else if (sign == '-')
+	{
+		printf("%d%c%d=%d", a, sign, b, a - b);
+	}
+	else if (sign == '*')
+	{
+		printf("%d%c%d=%d", a, sign, b, a * b);
+	}
+	else if (sign == '/')
+	{
+		printf("%d%c%d=%d", a, sign, b, a / b);
+	}
+	else
+	{
+		printf("invailed value!");
+	}
 
 	return 0;
 }
