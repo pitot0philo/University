@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -22,6 +23,8 @@ int main(void)
 	{
 		printf("%d and %d are all odd number", a, b);
 	}
+
+	system("pause>null\n");
 
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -17,6 +18,8 @@ int main(void)
 	{
 		printf("%d is not divisor of %d", a, b);
 	}
+
+	system("pause>null\n");
 
 	return 0;
 }
