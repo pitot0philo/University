@@ -1,16 +1,16 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 int main(void)
 {
 	int n;
-	printf("Á¤¼ö ÀÔ·Â :");
+	printf("ì •ìˆ˜ ìž…ë ¥ :");
 	scanf("%d", &n);
 	switch (n % 3)
 	{
 	case 0:
-		printf("°ÅÁþ");
+		printf("ê±°ì§“");
 		break;
 	default:
-		printf("Âü");
+		printf("ì°¸");
 		break;
 	}
 	return 0;

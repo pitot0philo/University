@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 
 int main(void)
@@ -7,7 +7,7 @@ int main(void)
 	int b;
 	char sign = 0;
 
-	printf("»çÄ¢¿¬»ê ÀÔ·Â(Á¤¼ö) : ");
+	printf("ì‚¬ì¹™ì—°ì‚° ìž…ë ¥(ì •ìˆ˜) : ");
 	scanf("%d%c%d", &a, &sign, &b);
 
 	if (sign == '+')

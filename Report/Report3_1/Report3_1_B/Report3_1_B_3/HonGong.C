@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 int main(void)
 {
 	int age = 25, chest = 95;
@@ -33,7 +33,7 @@ int main(void)
 			size = 'L';
 		}
 	}
-	printf("»çÀÌÁî´Â %cÀÔ´Ï´Ù.\n", size);
+	printf("ì‚¬ì´ì¦ˆëŠ” %cì…ë‹ˆë‹¤.\n", size);
 
 	return 0;
 }
