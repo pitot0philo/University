@@ -7,7 +7,7 @@ int main(void)
 	int b;
 	char sign = 0;
 
-	printf("사칙연산 입력 : ");
+	printf("사칙연산 입력(정수) : ");
 	scanf("%d%c%d", &a, &sign, &b);
 
 	if (sign == '+')
@@ -31,5 +31,6 @@ int main(void)
 		printf("invailed value!");
 	}
 
+	system("pause>=null\n");
 	return 0;
 }
