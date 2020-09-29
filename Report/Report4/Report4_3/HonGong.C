@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int row, star, i, j;
+	int row, star, i, j, k;
 	printf("Enter the number of rows and stars: ");
 	scanf("%d%d", &row, &star);
 
@@ -21,9 +21,23 @@ int main(void)
 			printf("\n");
 		}
 	}
-	else
+	else if ((star % row) != 0)
 	{
-		printf("not now...");
+		for (i = 0; i < (row - 1); i++)
+		{
+			for (j = 0; j < ((star / row)+1); j++)
+			{
+				printf("*");
+			}
+		printf("\n");
+		}
+
+		k = 0; 
+		while (k < (star-((row-1)*((star/row)+1))))
+		{
+			printf("*");
+			k++;
+		}
 	}
 	return 0;
 }
