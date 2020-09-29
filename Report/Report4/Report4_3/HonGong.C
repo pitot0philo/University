@@ -5,14 +5,25 @@ int main(void)
 	int row, star, i, j;
 	printf("Enter the number of rows and stars: ");
 	scanf("%d%d", &row, &star);
-	
-	for (i = 0; i < row; i++)
+
+	if (row > star)
 	{
-		for (j = 0; j < (star / row); j++)
+		printf("Invaild Value!");
+	}
+	else if ((star % row) == 0)
+	{
+		for (i = 0; i < row; i++)
 		{
-			printf("*");
+			for (j = 0; j < (star / row); j++)
+			{
+				printf("*");
+			}
+			printf("\n");
 		}
-		printf("\n");
+	}
+	else
+	{
+		printf("not now...");
 	}
 	return 0;
 }
