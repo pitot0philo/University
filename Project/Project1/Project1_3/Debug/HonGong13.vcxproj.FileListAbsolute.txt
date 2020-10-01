@@ -1,2 +1,4 @@
 D:\새 폴더\HonGong13\Debug\HonGong13.exe
 D:\새 폴더\HonGong13\Debug\HonGong13.pdb
+D:\University\Project\Project1\Project1_3\Debug\Project1_3.exe
+D:\University\Project\Project1\Project1_3\Debug\Project1_3.pdb
