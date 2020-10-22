@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -14,5 +15,8 @@ int main(void)
 	}
 
 	printf("sigma from a to b is %d", sum);
+
+	system("pause>null\n");
+
 	return 0;
 }
