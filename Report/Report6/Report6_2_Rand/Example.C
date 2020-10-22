@@ -1,43 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-void swap(double* pa, double* pb);
-void line_up(double* maxp, double* midp, double* minp);
+int line_up(int* a, int count);
 
 int main(void)
 {
-	double max, mid, min;
-
-	printf("enter the three real numbers : ");
-	scanf("%lf %lf %lf", &max, &mid, &min);
-	line_up(&max, &mid, &min);
-	printf("print lined numbers : %.1lf %.1lf %.1lf", max, mid, min);
-
-	return 0;
-}
-
-void swap(double* pa, double* pb)
-{
-	double temp;
-	temp = *pa;
-	*pa = *pb;
-	*pb = temp;
-}
-
-void line_up(double* maxp, double* midp, double* minp)
-{
-	for (int i = 0; i <= 10; i++)
+	int random[11];
+	srand((unsigned)time(NULL));
+	for (int i = 0; i < 11; i++)
 	{
-		if (*maxp < *midp)
+		random[i] = rand() % 100;
+	}
+
+	int count = sizeof(random) / sizeof(int);
+
+	line_up(random, count);
+
+	for (int i = 0; i < 11; i++)
+	{
+		printf("%d\n", random[i]);
+	}
+	return 0;
+	
+}
+
+int line_up(int* a, int count)
+{
+	int temp;
+	for (int i = 0; i < count; i++)
+	{
+		for (int j = i + 1; j < count; j++)
 		{
-			swap(maxp, midp);
-		}
-		else if (*maxp < *minp)
-		{
-			swap(maxp, minp);
-		}
-		else if (*midp < *minp)
-		{
-			swap(midp, minp);
+			if (*(a + i) > * (a + j))
+			{
+				temp = *(a + i);
+				*(a + i) = *(a + j);
+				*(a + j) = temp;
+			}
 		}
 	}
 }
