@@ -1,0 +1,6 @@
+﻿  Example.C
+D:\University\Project\Project3\Project3_1_3by3\Example.C(133,82): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\University\Project\Project3\Project3_1_3by3\Example.C(145,210): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\University\Project\Project3\Project3_1_3by3\Example.C(165,82): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\University\Project\Project3\Project3_1_3by3\Example.C(177,211): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Project3_1_3by3.vcxproj -> D:\University\Project\Project3\Project3_1_3by3\Debug\Project3_1_3by3.exe
