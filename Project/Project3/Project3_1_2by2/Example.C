@@ -133,10 +133,13 @@ int main(void)
 	{
 		for (j = 0; j < 2; j++)
 		{
-			inv_matrix1[i][j] = matrix1[(j + 1) % 2][(i + 1) % 2] / det_matrix1;
 			if ((i+1)%2 != (j+1)%2)
 			{
-				inv_matrix1[i][j] = -inv_matrix1[i][j];
+				inv_matrix1[i][j] = -matrix1[(j + 1) % 2][(i + 1) % 2] / det_matrix1;
+			}
+			else
+			{
+				inv_matrix1[i][j] = matrix1[(j + 1) % 2][(i + 1) % 2] / det_matrix1;
 			}
 			printf("%.4lf  ", inv_matrix1[i][j]);
 		}
