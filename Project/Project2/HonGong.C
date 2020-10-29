@@ -8,7 +8,7 @@
 //난수생성기 입력 및 중복 제거
 int main(void)
 {
-	int answer = 0;
+	
 	while (1)
 	{
 		int com_number[5];//컴퓨터가 사용할 숫자를 배열에 입력
@@ -39,7 +39,7 @@ int main(void)
 		for (int i = 0; i < 4; i++)
 		{
 			//printf("*");//랜덤넘버 저장 및 암호화 출력
-			printf("%d", com_number[i]);
+			printf("*");
 		}
 		int count = 1;
 
@@ -105,6 +105,7 @@ int main(void)
 			count++;
 		}
 
+		int answer = 0;
 		printf("want to play again? : <1> Yes <2> No\n");
 		scanf("%d", &answer);
 
@@ -115,10 +116,3 @@ int main(void)
 	}
 	return 0;
 }
-
-
-
-
-
-
-
