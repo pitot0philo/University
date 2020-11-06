@@ -148,5 +148,25 @@ int main(void)
 
 	printf("\nInverse of matrix 2 is : \n");
 
+	float inv_matrix2[2][2];
+	float det_matrix2;
+	det_matrix2 = matrix2[0][0] * matrix2[1][1] - matrix2[0][1] * matrix2[1][0];
+
+	for (i = 0; i < 2; i++)
+	{
+		for (j = 0; j < 2; j++)
+		{
+			if ((i + 1) % 2 != (j + 1) % 2)
+			{
+				inv_matrix2[i][j] = -matrix2[(j + 1) % 2][(i + 1) % 2] / det_matrix2;
+			}
+			else
+			{
+				inv_matrix2[i][j] = matrix2[(j + 1) % 2][(i + 1) % 2] / det_matrix2;
+			}
+			printf("%.4lf  ", inv_matrix2[i][j]);
+		}
+		printf("\n");
+	}
 	return 0;
 }
