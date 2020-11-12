@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+void line_up(char* a, int* b, int c);
+
 int main(void)
 {
 	char str[100];
@@ -9,7 +11,7 @@ int main(void)
 	int temp[27] = { 0 };
 	int count = 0;
 	char* Return;
-
+	int counttemp = 0;
 	for (int i = 0; i < 25; i++)
 	{
 		alphabet[i] = i + 97;//alphabet 배열에 a부터 z까지의 소문자 저장
@@ -34,6 +36,10 @@ int main(void)
 		count = 0;
 	}
 
+	counttemp = sizeof(temp) / sizeof(int);
+
+	line_up(alphabet, temp, counttemp);
+
 	for (int i = 0; i < 25; i++)
 	{
 		if(temp[i])
@@ -47,3 +53,26 @@ int main(void)
 //func get two array(temp and alphabet), one integer value(count temp)
 //if temp change, alphabet also change. but how?
 //how to change temp? Refer to Report 6_2 Random
+//Data Type: Void func
+
+void line_up(char* a, int* b, int c)
+{
+	int tempcount;
+	int tempalphabet;
+	for (int i = 0; i < c; i++)
+	{
+		for (int j = i + 1; j < c; j++)
+		{
+			if (*(b + i) < * (b + j))
+			{
+				tempcount = *(b + j);
+				*(b + j) = *(b + i);
+				*(b + i) = tempcount; // temp array lined up
+
+				tempalphabet = *(a + j);
+				*(a + j) = *(a + i);
+				*(a + i) = tempalphabet;//alphabet arry lined up?
+			}
+		}
+	}
+}
