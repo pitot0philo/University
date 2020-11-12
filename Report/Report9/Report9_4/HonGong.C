@@ -17,6 +17,7 @@ int main(void)
 		alphabet[i] = i + 97;//alphabet 배열에 a부터 z까지의 소문자 저장
 	}
 
+	printf("enter the string : ");
 	fgets(str, strlen(str), stdin);
 
 	if ((Return = strchr(str, '\n')) != NULL)
