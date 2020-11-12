@@ -1,0 +1,3 @@
+﻿  HonGong.C
+D:\University\Report\Report9\Report9_1_C\HonGong.C(21,24): warning C4020: 'strcpy': 실제 매개 변수가 너무 많습니다.
+  Report9_1_C.vcxproj -> D:\University\Report\Report9\Report9_1_C\Debug\Report9_1_C.exe
