@@ -77,13 +77,6 @@ int main(void)
 		printf("\n");
 	}
 
-	//행렬의 곱셈:  a11 a12 a13       b11 b12 b13		a11*b11+a12*b21+a13*b31  a11*b12+a12*b22+a13+b32  a11*b13+a12*b23+a13*b33
-	//  			a21 a22 a23	  x   b21 b22 b23	=	a21*b11+a22*b21+a23*b31  a21*b12+a22*b22+a23*b32  a21*b13+a22*b23+a23*b33
-	//				a31 a32 a33		  b31 b32 b33		a31*b11+a32*b21+a33*b31  a31*b12+a32*b22+a33*b32  a31*b13+a32*b23+a33*b33
-	//등호 왼쪽은 곱셈으로 새로 만들어진 행렬 C, 오른쪽에서 곱셈기호 왼쪽은 a, 오른쪽은 b이면
-	//11=11*11+12*21+13*31  12=11*12+12*22+13*32 13=11*13+12*23+13*33...이므로
-	//C행렬이 ij일때 곱은 ikkj로 반복.  3중 for문으로 ijk 사용, matrix5[i][j]=matrix1[i][k]*matrix2[k][j]
-
 	printf("\nmultiply of matrix 1 and matrix 2 is : \n");
 	for (i = 0; i < 2; i++)
 	{
@@ -125,8 +118,8 @@ int main(void)
 
 	printf("\nInverse of matrix 1 is : \n");
 
-	float inv_matrix1[2][2];
-	float det_matrix1;
+	double inv_matrix1[2][2];
+	double det_matrix1;
 	det_matrix1 = matrix1[0][0] * matrix1[1][1] - matrix1[0][1] * matrix1[1][0];
 
 	for (i = 0; i < 2; i++)
@@ -148,8 +141,8 @@ int main(void)
 
 	printf("\nInverse of matrix 2 is : \n");
 
-	float inv_matrix2[2][2];
-	float det_matrix2;
+	double inv_matrix2[2][2];
+	double det_matrix2;
 	det_matrix2 = matrix2[0][0] * matrix2[1][1] - matrix2[0][1] * matrix2[1][0];
 
 	for (i = 0; i < 2; i++)

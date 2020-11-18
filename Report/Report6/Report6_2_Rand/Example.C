@@ -13,10 +13,19 @@ int main(void)
 		random[i] = rand() % 100;
 	}
 
+	printf("before line up\n");
+
+	for (int i = 0; i < 11; i++)
+	{
+		printf("%d\n", random[i]);
+	}
+	printf("\n");
+
 	int count = sizeof(random) / sizeof(int);
 
 	line_up(random, count);
 
+	printf("\nafter line up\n");
 	for (int i = 0; i < 11; i++)
 	{
 		printf("%d\n", random[i]);

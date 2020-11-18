@@ -1,3 +1,3 @@
 ﻿  Example.C
-D:\University\Report\Report6\Report6_2_Rand\Example.C(48): warning C4716: 'line_up': 값을 반환해야 합니다.
+D:\University\Report\Report6\Report6_2_Rand\Example.C(52): warning C4716: 'line_up': 값을 반환해야 합니다.
   Report6_2_Rand.vcxproj -> D:\University\Report\Report6\Report6_2_Rand\x64\Debug\Report6_2_Rand.exe
