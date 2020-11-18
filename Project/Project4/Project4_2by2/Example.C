@@ -2,17 +2,29 @@
 #include <time.h>
 #include <stdlib.h>
 
+void printmatrix(double(*Arry), int col, int row)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			printf("%.4lf  ", (Arry[j + i * row]));
+		}
+		printf("\n");
+	}
+}
+
 
 int main(void)
 {
 	int i, j, k, m;
-	int matrix1[2][2];
-	int matrix2[2][2];
-	int add_matrix[2][2];
-	int subt_matrix[2][2];
-	int mult_matrix[2][2];
-	int trans_matrix1[2][2];
-	int trans_matrix2[2][2];
+	double matrix1[2][2];
+	double matrix2[2][2];
+	double add_matrix[2][2];
+	double subt_matrix[2][2];
+	double mult_matrix[2][2];
+	double trans_matrix1[2][2];
+	double trans_matrix2[2][2];
 
 	srand((unsigned)time(NULL));
 
@@ -32,27 +44,17 @@ int main(void)
 		}
 	}
 
-	printf("matrix 1 is : \n");
-	for (i = 0; i < 2; i++)
-	{
-		for (j = 0; j < 2; j++)
-		{
-			printf("%d  ", matrix1[i][j]);
-		}
-		printf("\n");
-	}
+	int col = sizeof(matrix1[0]) / sizeof(double);
+	int row = sizeof(matrix1) / sizeof(matrix1[0]);
+	double* pmatrix1 = (double*)(matrix1);
+	double* pmatrix2 = (double*)(matrix2);
 
+	printf("matrix1 is : \n");
+	printmatrix(pmatrix1, col, row);
 	printf("\n");
-
 	printf("matrix 2 is : \n");
-	for (k = 0; k < 2; k++)
-	{
-		for (m = 0; m < 2; m++)
-		{
-			printf("%d  ", matrix2[k][m]);
-		}
-		printf("\n");
-	}
+	printmatrix(pmatrix2, col, row);
+
 	//Çà·ÄÀÇ µ¡¼À: a11+b11 a12+b12 a13+b13//a21+b21 a22+b22 a23+b23//a31+b31 a32+b32 a33+b33
 	printf("\naddition of matrix 1 and matrix 2 is : \n");
 	for (i = 0; i < 2; i++)
@@ -60,7 +62,7 @@ int main(void)
 		for (j = 0; j < 2; j++)
 		{
 			add_matrix[i][j] = matrix1[i][j] + matrix2[i][j];
-			printf("%d  ", add_matrix[i][j]);
+			printf("%.4lf  ", add_matrix[i][j]);
 		}
 		printf("\n");
 	}
@@ -72,7 +74,7 @@ int main(void)
 		for (j = 0; j < 2; j++)
 		{
 			subt_matrix[i][j] = matrix1[i][j] - matrix2[i][j];
-			printf("%d  ", subt_matrix[i][j]);
+			printf("%.4lf  ", subt_matrix[i][j]);
 		}
 		printf("\n");
 	}
@@ -94,7 +96,7 @@ int main(void)
 			{
 				mult_matrix[i][j] += matrix1[i][k] * matrix2[k][j];
 			}
-			printf("%d  ", mult_matrix[i][j]);
+			printf("%.4lf  ", mult_matrix[i][j]);
 		}
 		printf("\n");
 	}
@@ -106,7 +108,7 @@ int main(void)
 		for (j = 0; j < 2; j++)
 		{
 			trans_matrix1[i][j] = matrix1[j][i];
-			printf("%d  ", trans_matrix1[i][j]);
+			printf("%.4lf  ", trans_matrix1[i][j]);
 		}
 		printf("\n");
 	}
@@ -118,22 +120,22 @@ int main(void)
 		for (j = 0; j < 2; j++)
 		{
 			trans_matrix2[i][j] = matrix2[j][i];
-			printf("%d  ", trans_matrix2[i][j]);
+			printf("%.4lf  ", trans_matrix2[i][j]);
 		}
 		printf("\n");
 	}
 
 	printf("\nInverse of matrix 1 is : \n");
 
-	float inv_matrix1[2][2];
-	float det_matrix1;
+	double inv_matrix1[2][2];
+	double det_matrix1;
 	det_matrix1 = matrix1[0][0] * matrix1[1][1] - matrix1[0][1] * matrix1[1][0];
 
 	for (i = 0; i < 2; i++)
 	{
 		for (j = 0; j < 2; j++)
 		{
-			if ((i+1)%2 != (j+1)%2)
+			if ((i + 1) % 2 != (j + 1) % 2)
 			{
 				inv_matrix1[i][j] = -matrix1[(j + 1) % 2][(i + 1) % 2] / det_matrix1;
 			}
@@ -148,8 +150,8 @@ int main(void)
 
 	printf("\nInverse of matrix 2 is : \n");
 
-	float inv_matrix2[2][2];
-	float det_matrix2;
+	double inv_matrix2[2][2];
+	double det_matrix2;
 	det_matrix2 = matrix2[0][0] * matrix2[1][1] - matrix2[0][1] * matrix2[1][0];
 
 	for (i = 0; i < 2; i++)
