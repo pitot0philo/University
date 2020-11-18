@@ -2,25 +2,47 @@
 #include <time.h>
 #include <stdlib.h>
 
-void printmatrix(double(*Arry), int col, int row)
+void printmatrix1(double(*MatArry)[2], int col, int row)
 {
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
 		{
-			printf("%.4lf  ", (Arry[j + i * row]));
+			printf("%.4lf   ", MatArry[i][j]);
 		}
 		printf("\n");
 	}
 }
 
+void print_addmatrix(double(*MatArry1)[2], double(*MatArry2)[2], int col, int row)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			printf("%.4lf  ", MatArry1[i][j] + MatArry2[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void print_submatrix(double(*MatArry1)[2], double(*MatArry2)[2], int col, int row)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			printf("%.4lf  ", MatArry1[i][j] - MatArry2[i][j]);
+		}
+		printf("\n");
+	}
+}
 
 int main(void)
 {
 	int i, j, k, m;
 	double matrix1[2][2];
 	double matrix2[2][2];
-	double add_matrix[2][2];
 	double subt_matrix[2][2];
 	double mult_matrix[2][2];
 	double trans_matrix1[2][2];
@@ -46,38 +68,20 @@ int main(void)
 
 	int col = sizeof(matrix1[0]) / sizeof(double);
 	int row = sizeof(matrix1) / sizeof(matrix1[0]);
-	double* pmatrix1 = (double*)(matrix1);
-	double* pmatrix2 = (double*)(matrix2);
 
 	printf("matrix1 is : \n");
-	printmatrix(pmatrix1, col, row);
+	printmatrix1(matrix1, col, row);
 	printf("\n");
 	printf("matrix 2 is : \n");
-	printmatrix(pmatrix2, col, row);
+	printmatrix1(matrix2, col, row);
 
-	//Çà·ÄÀÇ µ¡¼À: a11+b11 a12+b12 a13+b13//a21+b21 a22+b22 a23+b23//a31+b31 a32+b32 a33+b33
+	//Çà·ÄÀÇ µ¡¼À:
 	printf("\naddition of matrix 1 and matrix 2 is : \n");
-	for (i = 0; i < 2; i++)
-	{
-		for (j = 0; j < 2; j++)
-		{
-			add_matrix[i][j] = matrix1[i][j] + matrix2[i][j];
-			printf("%.4lf  ", add_matrix[i][j]);
-		}
-		printf("\n");
-	}
+	print_addmatrix(matrix1, matrix2, col, row);
 
 	//Çà·ÄÀÇ »¬¼À: a11-b11 a12-b12 a13-b13//a21-b21 a22-b22 a23-b23//a31-b31 a32-b32 a33-b33
 	printf("\nSubtraction of matrix 1 and matrix 2 is : \n");
-	for (i = 0; i < 2; i++)
-	{
-		for (j = 0; j < 2; j++)
-		{
-			subt_matrix[i][j] = matrix1[i][j] - matrix2[i][j];
-			printf("%.4lf  ", subt_matrix[i][j]);
-		}
-		printf("\n");
-	}
+	print_submatrix(matrix1, matrix2, col, row);
 
 	//Çà·ÄÀÇ °ö¼À:  a11 a12 a13       b11 b12 b13		a11*b11+a12*b21+a13*b31  a11*b12+a12*b22+a13+b32  a11*b13+a12*b23+a13*b33
 	//  			a21 a22 a23	  x   b21 b22 b23	=	a21*b11+a22*b21+a23*b31  a21*b12+a22*b22+a23*b32  a21*b13+a22*b23+a23*b33
