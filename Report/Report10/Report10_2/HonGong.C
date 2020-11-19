@@ -5,11 +5,13 @@ typedef struct Student
 {
 	char name[20];
 	int snum;
-	int sKor;
-	int sEng;
-	int sMath;
+	double sKor;
+	double sEng;
+	double sMath;
 	double Avg;
-	int Tot;
+	double Tot;
+	char grade;
+
 }Student;
 
 void swap(Student* arr, int a, int b)
@@ -56,7 +58,7 @@ int main(void)
 		printf("Student name : ");
 		scanf("%s", &list[i].name);
 		printf("Korean, English, Math score : ");
-		scanf("%d%d%d", &list[i].sKor, &list[i].sEng, &list[i].sMath);
+		scanf("%lf%lf%lf", &list[i].sKor, &list[i].sEng, &list[i].sMath);
 	}
 
 	for (int i = 0; i < 5; i++)
@@ -68,25 +70,24 @@ int main(void)
 	int count = 0;
 	count = sizeof(list) / sizeof(int);
 
-	char grade[5];
 
 	for (int i = 0; i < 5; i++)
 	{
 		if (list[i].Avg >= 70 && list[i].Avg < 80)
 		{
-			grade[i] = 'C';
+			list[i].grade = 'C';
 		}
 		else if (list[i].Avg >= 80 && list[i].Avg < 90)
 		{
-			grade[i] = 'B';
+			list[i].grade = 'B';
 		}
 		else if (list[i].Avg > 90)
 		{
-			grade[i]='A';
+			list[i].grade = 'A';
 		}
 		else
 		{
-			grade[i] = 'F';
+			list[i].grade = 'F';
 		}
 	}
 
@@ -95,16 +96,16 @@ int main(void)
 
 	for (int i = 0; i < 5; i++)
 	{
-		printf("\n%5d%10s%5d%5d%5d%7d%7lf%7c", list[i].snum, list[i].name, list[i].sKor, list[i].sEng, list[i].sMath, list[i].Tot, list[i].Avg, grade[i]);
+		printf("\n%5d  %s  %.0lf  %.0lf  %.0lf  %.0lf  %.2lf%5c", list[i].snum, list[i].name, list[i].sKor, list[i].sEng, list[i].sMath, list[i].Tot, list[i].Avg, list[i].grade);
 	}
 
 	sort(list, 0, 4);
 
-	printf("\n#Data after line_up\n");
+	printf("\n\n#Data after line_up\n");
 
 	for (int i = 0; i < 5; i++)
 	{
-		printf("\n%5d%10s%5d%5d%5d%7d%7lf%7c", list[i].snum, list[i].name, list[i].sKor, list[i].sEng, list[i].sMath, list[i].Tot, list[i].Avg, grade[i]);
+		printf("\n%5d  %s  %.0lf  %.0lf  %.0lf  %.0lf  %.2lf%5c", list[i].snum, list[i].name, list[i].sKor, list[i].sEng, list[i].sMath, list[i].Tot, list[i].Avg, list[i].grade);
 	}
 	return 0;
 }
