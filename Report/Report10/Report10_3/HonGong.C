@@ -14,7 +14,7 @@ int main(void)
 	{
 		printf("enter the real number : ");
 		scanf("%lf", &realnum);
-		if (realnum == -1) break;
+		if (realnum == 0) break;
 		if (count == size)
 		{
 			size += 5;
