@@ -1,8 +1,26 @@
 #include <stdio.h>
 #include <math.h>
 
-double dotproduct(double x[], double y[]);
-double size_of_vector(double x[]);
+double dotproduct(double x[], double y[])
+{
+	int i;
+	double result;
+
+	result = 0.0;
+	for (i = 0; i < 2; i++)
+		result += x[i] * y[i];
+
+	return result;
+}
+
+double size_of_vector(double x[])
+{
+	double result;
+
+	result = sqrt(pow(x[0], 2) + pow(x[1], 2));
+
+	return result;
+}
 
 int main(void)
 {
@@ -104,25 +122,4 @@ int main(void)
 	}
 
 	return 0;
-}
-
-double dotproduct(double x[], double y[])
-{
-	int i;
-	double result;
-
-	result = 0.0;
-	for (i = 0; i < 2; i++)
-		result += x[i] * y[i];
-
-	return result;
-}
-
-double size_of_vector(double x[])
-{
-	double result;
-	
-	result = sqrt(pow(x[0], 2) + pow(x[1], 2));
-
-	return result;
 }
